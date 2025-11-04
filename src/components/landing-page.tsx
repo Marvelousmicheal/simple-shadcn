@@ -1,5 +1,7 @@
 import { ArrowRight, Boxes, ChevronRight, Sparkles, Zap } from "lucide-react";
 import { Button } from "./ui/button";
+import { TerminalDemo } from "./terminal-demo";
+
 
 
 interface LandingPageProps {
@@ -8,9 +10,9 @@ interface LandingPageProps {
 
 export default function LandingPage({ onGetStarted }: LandingPageProps) {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 bg-background">
+    <div className=" pt-40 pb-8 flex items-center justify-center px-6 bg-background">
       <div className="max-w-4xl mx-auto text-center space-y-8">
-        {/* Announcement Badge */}
+       
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
           <span>Announcing 200M seed raised</span>
           <ChevronRight className="w-4 h-4" />
@@ -52,7 +54,32 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
               <Sparkles className="w-4 h-4 transition-all group-hover:scale-110" />
             </a>
           </Button>
+
+
         </div>
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-8">
+          <div className="px-4 py-2 bg-card border border-border rounded-full text-sm flex items-center gap-2 hover:border-foreground/40 transition-all hover:scale-105 cursor-default animate-fade-in">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            <span className="font-medium">50+ Components</span>
+          </div>
+          <div className="px-4 py-2 bg-card border border-border rounded-full text-sm font-medium hover:border-foreground/40 transition-all hover:scale-105 cursor-default animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            ⚡ Zero Config
+          </div>
+          <div className="px-4 py-2 bg-card border border-border rounded-full text-sm font-medium hover:border-foreground/40 transition-all hover:scale-105 cursor-default animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            🎯 Fully Typed
+          </div>
+          <div className="px-4 py-2 bg-card border border-border rounded-full text-sm font-medium hover:border-foreground/40 transition-all hover:scale-105 cursor-default animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <Sparkles className="w-3 h-3 inline mr-1" />
+            AI Powered
+          </div>
+        </div>
+
+         <div className="pt-16">
+          <TerminalDemo/>
+         </div>
+
+
+
       </div>
     </div>
   )
