@@ -1,4 +1,5 @@
 "use client";
+import CodeConsole from "@/components/code-console";
 import ComponentSelector from "@/components/component-selector";
 import ComponentsPlayground from "@/components/components-playground";
 import LandingPage from "@/components/landing-page";
@@ -6,6 +7,7 @@ import ProjectPurposeSelector from "@/components/project-purpose-selector";
 import ProjectTypeSelector from "@/components/project-type-selector";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Check } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 
@@ -78,10 +80,12 @@ export default function Home() {
           </div>
           {
             selectedComponents.length > 0 && (
-              <Button variant="default" size="sm" className="gap-2" >
-                <Check className="w-4 h-4" />
-                Done
-              </Button>
+              <Link href="/done">
+                <Button variant="default" size="sm" className="gap-2" >
+                  <Check className="w-4 h-4" />
+                  Done
+                </Button>
+              </Link>
             )
           }
         </div>
@@ -122,7 +126,7 @@ export default function Home() {
 
         {
           selectedPurpose && selectedComponents.length > 0 && (
-            
+            <CodeConsole selectedComponents={selectedComponents}/>
           )
         }
 
